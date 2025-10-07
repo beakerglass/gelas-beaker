@@ -1,0 +1,337 @@
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Playfair+Display:ital,wght@1,700&display=swap');
+
+/* --- Reset & Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- Header & Navigation --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1rem;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+nav ul li a:hover, nav ul li a.active {
+    border-bottom-color: #fff;
+}
+
+.cta-button {
+    text-decoration: none;
+    color: #fff;
+    background-color: #e53935;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #c62828;
+    transform: translateY(-2px);
+}
+
+/* --- Hero Section (Halaman Utama) --- */
+.hero-container {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+.hero-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 5%;
+    /* Menambahkan padding vertikal agar judul tidak terlalu menempel di tepi atas/bawah */
+    padding-top: 100px; /* Cukupkan ruang untuk header */
+    padding-bottom: 50px;
+}
+
+.hero-content h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 4vw; /* Sedikit dikecilkan untuk desktop */
+    max-width: 800px; /* Batasi lebar agar tidak terlalu melebar di layar besar */
+    font-weight: 300;
+    line-height: 1.2;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.highlight-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 700;
+    color: #ffcdd2;
+}
+
+/* --- General Page Styles (Penjelasan & Profil) --- */
+.page-container {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.page-container::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 150px 5% 50px 5%;
+    position: relative;
+    z-index: 1;
+}
+
+.content-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3rem;
+    border-radius: 10px;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.content-header-image {
+    width: 100%;
+    /* Tinggi dan object-fit dihapus agar gambar tidak terpotong dan menyesuaikan proporsi */
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.content-card h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.content-card h3 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid #e53935;
+    padding-left: 1rem;
+}
+.content-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.content-card p, .content-card li {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+.content-card ul {
+    list-style-position: inside;
+    padding-left: 10px;
+}
+
+/* --- Penjelasan Page Specifics --- */
+.beaker-types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.beaker-card {
+    background: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.beaker-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.beaker-card img {
+    width: 100%;
+    height: 200px; /* Tetapkan tinggi wadah gambar */
+    object-fit: contain; /* Agar seluruh gambar terlihat tanpa terpotong */
+    padding: 10px; /* Tambahkan sedikit padding agar gambar tidak terlalu menempel tepi */
+    background-color: #fff; /* Memberi latar belakang putih jika ada ruang kosong */
+}
+.beaker-card h4, .beaker-card p {
+    padding: 1rem;
+}
+.beaker-card p {
+    font-size: 0.9rem;
+    padding-top: 0;
+}
+.size-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    padding-left: 0;
+}
+.size-list li {
+    background: #eee;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* --- Profil Page Specifics --- */
+.profile-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3rem;
+    border-radius: 10px;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.profile-picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.profile-bio {
+    flex: 1;
+}
+
+.profile-bio h3 {
+    border-left: none;
+    padding-left: 0;
+    margin-top: 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.profile-bio h4 {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #e53935;
+    margin-bottom: 1.5rem;
+}
+
+
+/* ======================================================= */
+/* --- Media Queries (Responsive for Mobile) --- */
+/* ======================================================= */
+@media (max-width: 768px) {
+    /* --- Penyesuaian Header & Navigasi --- */
+    header {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem 5%;
+        position: relative;
+        background: rgba(0,0,0,0.2);
+    }
+    
+    nav ul {
+        gap: 1.5rem;
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* --- Penyesuaian Halaman Utama --- */
+    .hero-container {
+        height: auto;
+        min-height: 90vh;
+    }
+
+    .hero-content h1 {
+        font-size: 8vw;
+    }
+    
+    /* --- Penyesuaian Halaman Konten --- */
+    .page-container header {
+        position: absolute;
+        background: none;
+    }
+
+    .content-wrapper {
+        padding: 120px 5% 30px 5%;
+    }
+
+    .content-card {
+        padding: 1.5rem;
+    }
+    .content-card h2 {
+        font-size: 1.8rem;
+    }
+    .content-card h3 {
+        font-size: 1.4rem;
+    }
+
+    /* --- Penyesuaian Halaman Profil --- */
+    .profile-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .profile-picture {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-bio h2 {
+        font-size: 1.8rem;
+    }
+}
